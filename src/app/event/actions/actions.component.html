@@ -1,0 +1,48 @@
+<div class="container view" *ngIf="actionType != 'View'">
+    <h1>{{actionType == 'create' ? "Create New" : "Edit"}} Event</h1>
+
+    <a href="#" routerLink="/event/index" class="btn btn-primary">Back</a>
+    <mat-card>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <table>
+                <tr size="12">
+                    <mat-form-field appearance="outline" class="">
+                        <mat-label>Website Name</mat-label>
+                        <input matInput formControlName="websiteName" id="websiteName" type="text" class="form-control">
+                    </mat-form-field>
+                </tr>
+                <tr size="12">
+                <mat-form-field appearance="outline" class="">
+                        <mat-label>Title</mat-label>
+                        <input matInput formControlName="title" id="title" type="text" class="form-control">
+                    </mat-form-field>
+                </tr>
+                <tr size="12">
+                    <mat-form-field appearance="outline" class="">
+                        <mat-label>Event Date</mat-label>
+                        <input matInput formControlName="eventDate" [ngModel]="eventDatevalue" id="eventDate" type="date" class="form-control">
+                    </mat-form-field>
+                </tr>
+                <tr size="12">
+                    <mat-form-field appearance="outline" class="">
+                        <mat-label>Location</mat-label>
+                        <input matInput formControlName="location" id="location" type="text" class="form-control">
+                    </mat-form-field>
+                </tr>
+        </table>
+        <button mat-raised-button color="primary"  type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+</mat-card>
+</div>
+<div class="container view" *ngIf="actionType == 'View'">
+    <a  href="#" routerLink="/event/index" class="btn btn-primary">Back</a>
+    <mat-card>
+        <mat-card-title>View Event</mat-card-title>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Website Name: {{event.websiteName}}</li>
+            <li class="list-group-item"> Title: {{event.title}} </li>
+            <li class="list-group-item">Event Date : {{event.eventDate}}</li>
+            <li class="list-group-item">Location: {{event.Location}}</li>
+        </ul>
+</mat-card>
+</div>

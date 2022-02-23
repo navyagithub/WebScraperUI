@@ -1,0 +1,8 @@
+.view{
+    max-width: 50%;
+    margin: 6rem 6rem 6rem 15rem
+}
+::ng-deep .custom-style-add{
+    background-color:#673ab7;
+    color:white;
+  }

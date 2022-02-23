@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+   
+  }
+  th{
+      color:cadetblue;
+      font-size: medium;
+  }
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+  .addBtn{
+    margin-bottom: 10px;
+    float: right;
+  }
+  .container{
+      margin-top: 10px;
+  }
+  .searchLabel{
+      font-size: medium;
+  }
+  .searchField{
+      margin-left:50px;
+  }
+  ::ng-deep .custom-style-delete{
+    background-color:red;
+    color:white;
+  }
